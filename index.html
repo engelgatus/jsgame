@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Game</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<h1>Defeat the Poring!</h1>
+
+	<div id="noviceStat">
+
+		<h2>Novice</h2>
+
+		<p class="hpText">HP</p>
+
+		<p id="maxNoviceHP" class="currentAndMaxHP">1000</p>
+		<p class="currentAndMaxHP">/</p>
+		<p id="currentNoviceHP" class="currentAndMaxHP"></p>
+
+		<div id="hpProgressNovice">
+			<div id="hpBarNovice"></div>
+		</div>
+
+		<p class="spText">SP</p>
+
+		<p id="maxNoviceSP" class="currentAndMaxSP">200</p>
+		<p class="currentAndMaxSP">/</p>
+		<p id="currentNoviceSP" class="currentAndMaxSP">100</p>
+
+		<div id="spProgressNovice">
+			<div id="spBarNovice"></div>
+		</div>
+
+
+		<div>
+			<img id="attackBtn" class="battleBtn" src="assets/images/attack.png">
+			<img id="skillBtn" class="battleBtn" src="assets/images/skill.png">
+			<img id="potsBtn" class="battleBtn" src="assets/images/potion.png">
+		</div>
+
+	</div>
+
+	<div id="poringStat">
+
+		<h2>Poring</h2>
+
+		<p class="hpText">HP</p>
+
+		<p id="maxPoringHP" class="currentAndMaxHP">1500</p>
+		<p class="currentAndMaxHP">/</p>
+		<p id="currentPoringHP" class="currentAndMaxHP"></p>
+
+		<div id="hpProgressPoring">
+			<div id="hpBarPoring"></div>
+		</div>
+
+		<p class="spText">SP</p>
+
+		<p id="maxPoringSP" class="currentAndMaxSP">350</p>
+		<p class="currentAndMaxSP">/</p>
+		<p id="currentPoringSP" class="currentAndMaxSP">100</p>
+
+		<div id="spProgressPoring">
+			<div id="spBarPoring"></div>
+		</div>
+
+	</div>
+
+	<div>
+		<img id="noviceAvatar" class="avatar" src="assets/images/novice.png">
+		<img id="poringAvatar" class="avatar" src="assets/images/poring.png">
+	</div>
+
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+@font-face {
+	font-family: "Letters for Learners";
+	src: url('../fonts/Letters for Learners.ttf');
+}
+
+@font-face {
+	font-family: "Brushield";
+	src: url(../fonts/Brushield.ttf);
+}
+
+@font-face {
+	font-family: "Ragnarok";
+	src: url(../fonts/Ragnarok.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Brushield';
+	font-size: 90px;
+	text-align: center;
+	position: fixed;
+	top: 30px;
+	left: 33%;
+}
+
+#noviceStat,
+#poringStat {
+	border: solid 1px #333;
+	width: 30%;
+	height: 35vh;
+	border-radius: 15px;
+	padding: 5px;
+	box-shadow: 2px 2px #333;
+	margin-top: 20px;
+}
+
+#noviceStat {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#poringStat {
+	float: right;
+	margin-right: 10px;	
+}
+
+h2 {
+	text-align: center;
+	font-family: "Ragnarok", sans-serif;
+	font-size: 35px;
+}
+
+.hpText,
+.spText {
+	font-family: "Letters for Learners", sans-serif;
+	margin-left: 10px;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.currentAndMaxHP,
+.currentAndMaxSP {
+	float: right;
+	font-family: "Letters for Learners", sans-serif;
+	font-size: 30px;
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+.battleBtn {
+	height: 65px;
+	width: 65px;
+	display: inline-block;
+	float: left;
+	border-radius: 10px;
+	margin: 20px 30px 10px 35px;
+	background-color: white;
+}
+
+.battleBtn:hover {
+	box-shadow: 2px 2px lightgrey;
+	cursor: pointer;
+}
+
+.avatar {
+	position: fixed;
+}
+
+#noviceAvatar {
+	bottom: -50px;
+	left: 15%;
+	height: 450px;
+	width: 450px;
+
+}
+
+#poringAvatar {
+	bottom: 25px;
+	right: 25%;
+	height: 250px;
+	width: 250px;
+}
+
+#hpProgressNovice,
+#spProgressNovice,
+#hpProgressPoring,
+#spProgressPoring {
+ 	width: 95%;
+	margin: 0 auto;
+  	background-color: grey;
+  	border-radius: 5px;
+}
+
+#hpBarNovice,
+#spBarNovice,
+#hpBarPoring,
+#spBarPoring {
+  	width: 100%;
+  	height: 4vh;
+  	background-color: green;
+  	border-radius: 5px;
+}
+
