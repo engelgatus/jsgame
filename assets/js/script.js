@@ -18,17 +18,24 @@ let curNovSP = document.querySelector("#currentNoviceSP");
 let maxNovSP = document.querySelector("#maxNoviceSP");
 curNovSP.innerHTML = maxNovSP.innerHTML;
 
+
 attackBtn.addEventListener("click", function() {
 	if(curPorHP.innerHTML <= 0) {
 		curPorHP.innerHTML = 0;
 	} else {
 		let damage = getRandomInt(50);
-		curPorHP.innerHTML -= damage;		
+		curPorHP.innerHTML -= damage;
 	}
+
+	// attackBtn.removeEventListener();
+	// setInterval(attackBtnNovice, 1500);
 
 	let bar = document.querySelector("#hpBarPoring");
 	bar.style.width = ((curPorHP.innerHTML*100)/maxPorHP.innerHTML+"%");
+
+	checkWhoWins();
 })
+
 
 skillBtn.addEventListener("click", function() {
 	if(curPorHP.innerHTML <= 0) {
@@ -50,11 +57,20 @@ skillBtn.addEventListener("click", function() {
 
 	let spBar = document.querySelector("#spBarNovice");
 	spBar.style.width = ((curNovSP.innerHTML*100)/maxNovSP.innerHTML+"%")
+	checkWhoWins();
 })
 
-// potsBtn.addEventListener("click", function() {
-// 	if(curNovHP >= )
-// })
+potsBtn.addEventListener("click", function() {
+	if(curNovHP.innerHTML >= maxNovHP.innerHTML) {
+		curNovHP.innerHTML = maxNovHP.innerHTML;
+	} else {
+		let potsHP = getRandomInt(80)
+		curNovHP.innerHTML += potsHP;
+	}
+
+	let bar = document.querySelector("#hpBarNovice");
+	bar.style.width = ((curNovHP.innerHTML*100)/maxNovHP.innerHTML+"%")
+})
 
 let poringAttack = function() {
 	let poringDmg = getRandomInt(60);
@@ -62,9 +78,12 @@ let poringAttack = function() {
 	if(curNovHP.innerHTML <= 0) {
 		clearInterval(poringAttack);
 		curNovHP.innerHTML = 0;
+	} else if(curPorHP.innerHTML == 0) {
+		clearInterval(poringAttack);
 	}
 	let bar = document.querySelector("#hpBarNovice");
-	bar.style.width = ((curNovHP.innerHTML*100)/maxNovHP.innerHTML+"%")
+	bar.style.width = ((curNovHP.innerHTML*100)/maxNovHP.innerHTML+"%");
+	checkWhoWins();
 };
 
 setInterval(poringAttack, 1200);
@@ -77,10 +96,35 @@ let spRegen = function() {
 		curNovSP.innerHTML = curNovSP.innerHTML*1 + noviceRegen*1;		
 	}
 	let spBar = document.querySelector("#spBarNovice");
-	spBar.style.width = ((curNovSP.innerHTML*100)/maxNovSP.innerHTML+"%")
+	spBar.style.width = ((curNovSP.innerHTML*100)/maxNovSP.innerHTML+"%");
+
+	if(checkWhoWins() == true) {
+		clearInterval(spRegen);
+	} else if(checkWhoWins() == false){
+		clearInterval(spRegen);
+	}
 };
 
 setInterval(spRegen, 1800);
+
+let checkWhoWins = function() {
+	if(curNovHP.innerHTML == 0) {
+		resultMessage.innerHTML = "You Lost!";
+		document.querySelector("#resultMessage").style.color = "darkgrey";
+
+		attackBtn.removeEventListener();
+		skillBtn.removeEventListener();
+		potsBtn.removeEventListener();
+		return true;
+	} else if(curPorHP.innerHTML == 0) {
+		resultMessage.innerHTML = "You won!";
+
+		attackBtn.removeEventListener();
+		skillBtn.removeEventListener();
+		potsBtn.removeEventListener();
+		return false;
+	}	
+}
 
 // if(curPorHP == 0) {
 // 	"My time has come. Sends shivers down my spine. Body's aching all the time"

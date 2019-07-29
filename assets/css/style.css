@@ -9,6 +9,11 @@
 }
 
 @font-face {
+	font-family: "Vontens";
+	src: url(../fonts/Vontens.ttf);
+}
+
+@font-face {
 	font-family: "Ragnarok";
 	src: url(../fonts/Ragnarok.ttf);
 }
@@ -124,5 +129,15 @@ h2 {
   	height: 4vh;
   	background-color: green;
   	border-radius: 5px;
+}
+
+#resultMessage {
+	font-family: "Vontens", sans-serif;
+	position: absolute;
+	bottom: 55vh;
+	left: 39%;
+	font-size: 80px;
+	text-transform: uppercase;
+	color: indianred;
 }
 
